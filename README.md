@@ -27,7 +27,31 @@
 
 ## Features
 
-- Create lottery
+- Create lottery every 1 minute
+- Assign winning ticket
+- API system to call winning ticket & winning user
+- 
+
+
+## Enhancements
+
+- Moongoose & MongoDB
+- Login System
+- User System
+- 
+
+
+Currently system assigns winning ticket from the start along with ticket buyers
+However a better system would be to allow users to purchase tickets and assign a winner after the 1 minute mark then regenerate a new lottery
+
+Also adding a MongoDB would add a lot in terms of optimization for data storage due to its binary version of JSON. Also aids it in supporting more advanced types of data.
+
+The flexibility & simplicity are big pros.
+
+Since this is not a massive scale project it will not require or benefit from the use of a relational database.
+
+
+
 
 
 ## Run Locally
