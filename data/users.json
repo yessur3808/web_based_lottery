@@ -1,0 +1,61 @@
+{
+
+    "users_list":[
+        {
+            "id": "user0",
+            "name":"user0",
+            "username":"user0",
+            "login_method": "google",
+            "user_level": 12,
+            "created_at_date": "19/05/2022",
+            "created_at_time": "17:23:47"
+        },
+        {
+            "id": "user1",
+            "name":"user1",
+            "username":"user1",
+            "login_method": "twitter",
+            "user_level": 2,
+            "created_at_date": "23/07/2022",
+            "created_at_time": "20:13:28"
+        },
+        {
+            "id": "user2",
+            "name":"user2",
+            "username":"user2",
+            "login_method": "email",
+            "user_level": 4,
+            "created_at_date": "09/07/2022",
+            "created_at_time": "07:03:15"
+        },
+        {
+            "id": "user3",
+            "name":"user3",
+            "username":"user3",
+            "login_method": "email",
+            "user_level": 1,
+            "created_at_date": "28/07/2022",
+            "created_at_time": "22:56:03"
+        },
+        {
+            "id": "user4",
+            "name":"user4",
+            "username":"user4",
+            "login_method": "google",
+            "user_level": 15,
+            "created_at_date": "24/06/2022",
+            "created_at_time": "11:32:24"
+        },
+        {
+            "id": "user5",
+            "name":"user5",
+            "username":"user5",
+            "login_method": "email",
+            "user_level": 5,
+            "created_at_date": "14/07/2022",
+            "created_at_time": "13:43:25"
+        }
+    ]
+
+
+}
