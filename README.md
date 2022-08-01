@@ -38,7 +38,8 @@
 - Moongoose & MongoDB
 - Login System
 - User System
-- 
+- Testing via Mocha/Jest (currently only using Postman)
+
 
 
 Currently the system assigns a winning ticket from the start along with ticket buyers
@@ -54,6 +55,8 @@ Also adding a MongoDB would add a lot in terms of optimization for data storage 
 The flexibility & simplicity are big pros.
 
 Since this is not a massive scale project it will not require or benefit from the use of a relational database.
+
+
 
 
 
@@ -99,15 +102,58 @@ if the backend is running check
 
 ## API Reference
 
-#### Get all Tickets for current draw
+
+#### Create a new Lottery ( not necessary in current version since lottery is automated )
 
 ```http
-  GET http://localhost:3030/api/tickets/list
+  POST http://localhost:3030/api/lottery/create
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-|  | `string` | **Required**. Your API key |
+
+#### Remove a specific lottery
+
+```http
+  GET http://localhost:3030/api/lottery/:lotteryid/remove
+```
+
+
+#### List out lottery tickets
+
+```http
+  GET http://localhost:3030/api/lottery/list
+```
+
+
+#### Generate tickets for a specific lottery
+
+```http
+  GET http://localhost:3030/api/lottery/:lotteryid/generate
+```
+
+
+
+#### In order to buy any number of tickets
+
+```http
+  POST http://localhost:3030/api/lottery/:lotteryid/buy/:number
+```
+
+
+
+
+#### Anounce Lottery winner & winning ticket
+
+```http
+  GET http://localhost:3030/api/lottery/:lotteryid/winner
+```
+
+
+
+#### Create a new user account
+
+```http
+  GET http://localhost:3030/api/user/create
+```
 
 
 
