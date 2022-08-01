@@ -1,10 +1,23 @@
 const { generateTickets, randomInteger, randomID } = require('../utils/utils.js');
 const fs = require('fs');
 const moment = require('moment');
-const { formatWithOptions } = require('util');
 
 // Method for listing tickets
 exports.listTickets = (req, res) => {
+    fs.readFile('./data/lottery.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error("Error occurred: ",err);
+            if(res){ res.status(400).send({msg:'There was an error while Listing out the current tickets', error: err}); }                
+            return;
+        }
+        var cur_lottery = findCurrentLottery(req, res, (data) => {
+            console.log('buy data ', data);
+        });
+    
+
+
+
+    });
 
 }
 
@@ -20,8 +33,7 @@ exports.buyTickets = (req, res) => {
     });
 
 
-    console.log('current_lottery ', cur_lottery);
-    
+ 
     
     
 
@@ -143,7 +155,7 @@ async function createNewLottery(req,res){
         fs.writeFile('./data/lottery.json', JSON.stringify(cur_data), { flag: "w" }, err0 => {
             if (err0) {
               console.error(err0);
-              res.status(400).send({msg:'There was an error', error: err0});
+              res.status(400).send({msg:'There was an error while creating a new lottery', error: err0});
               return;
             }
             // file written successfully
@@ -159,7 +171,7 @@ async function removeOldLotteries(req,res, callback){
         if (err) {
             console.error("Error occurred: ",err);
             if(res){
-                res.status(400).send({msg:'There was an error', error: err});
+                res.status(400).send({msg:'There was an error while removing previous lotteries', error: err});
             }
             return;
         }
@@ -180,13 +192,11 @@ async function removeOldLotteries(req,res, callback){
             }
 
 
-            console.log('cur_data ', cur_data);
-
             fs.writeFile('./data/lottery.json', JSON.stringify(cur_data), { flag: "w" }, err0 => {
                 if (err0) {
                 console.error(err0);
                 if(res){
-                    res.status(400).send({msg:'There was an error', error: err0});
+                    res.status(400).send({msg:'There was an error while removing previous lotteries', error: err0});
                 }
                 return;
                 }

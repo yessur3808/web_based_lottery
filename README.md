@@ -44,7 +44,10 @@
 Currently the system assigns a winning ticket from the start along with ticket buyers
 However a better system would be to allow users to purchase tickets and assign a winner after the 1 minute mark then regenerate a new lottery.
 
-Adding in the ability to add new users as well.
+Adding in the ability to add new users as well. A Simple login system, a reward system for every lottery won. 
+
+I would rather than using a scheduler use a countdown for a time set by the lottery generation to 1.5 minutes from the time it is generated after the time runs out it outputs a winner and winning ticket.
+Then proceeds to make a new lottery with the same process. 
 
 Also adding a MongoDB would add a lot in terms of optimization for data storage due to its binary version of JSON. Also aids it in supporting more advanced types of data.
 
