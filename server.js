@@ -27,7 +27,8 @@ mongoose.connect('mongodb://localhost/testdb',{
 let app = express();
 
 // Import routes
-let lotteryRoutes = require("./routes/ticket-routes")
+let lotteryRoutes = require("./routes/ticket-routes");
+let userRoutes = require("./routes/user-routes");
 
 app.use(express.json({ limit: '300mb' }));
 app.use(express.urlencoded({ limit: '300mb', extended: true }));
@@ -38,7 +39,6 @@ app.use(cors());
 // Setup server port
 var port = process.env.port || 3030;
 
-
 // Send message for default URL
 app.get('/test', (req, res) => res.json({
     status: "The API is Working",
@@ -46,7 +46,8 @@ app.get('/test', (req, res) => res.json({
 }));
 
 // Use Api routes in the App
-app.use('/api/lottery', lotteryRoutes)
+app.use('/api/lottery', lotteryRoutes);
+app.use('/api/user', userRoutes);
 
 // Launch the app to listen to the specified port
 var server = app.listen(port, function () {

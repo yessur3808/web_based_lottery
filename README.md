@@ -41,8 +41,10 @@
 - 
 
 
-Currently system assigns winning ticket from the start along with ticket buyers
-However a better system would be to allow users to purchase tickets and assign a winner after the 1 minute mark then regenerate a new lottery
+Currently the system assigns a winning ticket from the start along with ticket buyers
+However a better system would be to allow users to purchase tickets and assign a winner after the 1 minute mark then regenerate a new lottery.
+
+Adding in the ability to add new users as well.
 
 Also adding a MongoDB would add a lot in terms of optimization for data storage due to its binary version of JSON. Also aids it in supporting more advanced types of data.
 
